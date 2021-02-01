@@ -3,6 +3,7 @@ body{
   background-image: linear-gradient(to bottom, #009688 15vh,
   #dddbd1 15vh, #d2dbdc 100%);
   height: 100vh;
+  display: flex;
 }
 
 
@@ -19,7 +20,8 @@ body{
 img {
   border-radius: 999rem;
   height: 50px;
-  vertical-align: middle
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .ico li{
@@ -29,7 +31,6 @@ img {
   font-size: 25px;
   padding-right: 15px;
 }
-
 
 .middle{
   background-color: #8edafc;
@@ -53,26 +54,29 @@ img {
 .lente{
   width: 100%;
   height: 90%;
-  padding: 5px 5px;
+  margin-left: 10px;
 }
 
 .contorno i{
   color: #b1b1b1;
-  margin-left: 20px;
-
+  margin-left: 17px;
 }
 
 .lente input{
   height: 30px;
-  width: 350px;
-  outline: none;
+  width: 380px;
+  /* outline:inherit; */
+  margin-right: 10px;
+}
+input:focus{
+    outline: none;
 }
 
 .contorno{
   background-color: white;
   height: 30px;
   width: 60px;
-  border: 1px solid #b1b1b1;
+  /* border: 1px solid #b1b1b1; */
 }
 
 .contorno i{
@@ -85,21 +89,29 @@ img {
   border-bottom: 1px solid #fafafa;
 }
 
+.utente li:hover{
+  background-color:  #fafafa;
+}
+
+/* WARNING AGGIUNGERE CONTATTI PER RENDERLO VISIBILE */
+.utenti{
+ overflow-y: scroll;
+ height: calc(100% - 200px);
+}
+
 .utenti img{
   vertical-align: top;
   margin-bottom: 10px;
   margin-left: 15px;
+  margin-right: 15px;
 }
 
-.right {
-  width: 60%;
-}
 .chat{
-  background-image: url('.../img/mine.jpg');
+  background-image: url('../img/mine.jpg');
   background-color: pink;
-  height: 600px;
+  height: calc(100% - 140px);
+  overflow-y: scroll;
 }
-
 
 .input{
   background-color: #f3eeea;
@@ -114,8 +126,8 @@ img {
   width: 600px;
   margin-right: 15px;
   margin-left: 15px;
-  border: 1px solid #cfcdce;
   font-size: 15px;
+  border: 1px solid #cfcdce;
 }
 
 .input i{
@@ -125,4 +137,18 @@ img {
 
 input{
   padding-left: 15px;
+  border: none;
+}
+
+.bell{
+  border-radius: 50%;
+  height: 53px;
+  background-color: white;
+  margin-right: 15px;
+}
+
+.bell i{
+  font-size: 20px;
+  padding: 15px;
+  color: #8edafc;
 }
