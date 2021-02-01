@@ -1,0 +1,74 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  /* background-image: linear-gradient(
+      0deg,
+      rgba(209, 219, 220, 1) 0%,
+      rgba(219, 219, 211, 1) 100%
+    );
+  #009788
+  height: 100vh;
+  width: 100%; */
+}
+
+.centro {
+  background-color: red;
+  height: 800px;
+}
+
+.left{
+  width: 40%;
+  height: 800px;
+  background-color: lightgreen;
+}
+
+img {
+  border-radius: 999rem;
+  height: 50px;
+  vertical-align: middle
+}
+
+.ico li{
+  list-style: none;
+  display: inline;
+}
+
+.up {
+  background-color: lightgrey ;
+}
+
+.middle{
+  background-color: lightblue;
+  height: 70px;
+}
+
+.search{
+  height: 50px;
+  background-color: lightgrey;
+}
+
+.utente li{
+  list-style: none;
+  border-bottom: 1px solid grey;
+}
+.utenti img{
+  vertical-align: top;
+}
+
+.right {
+  width: 60%;
+}
+.chat{
+  /* background-image: url('../img/mine.jpg'); */
+  background-color: yellow;
+  height: 650px;
+}
+
+.input li {
+  list-style: none;
+  display: inline;
+
+}
+
+.input input{
+  width: 60%;
+}
