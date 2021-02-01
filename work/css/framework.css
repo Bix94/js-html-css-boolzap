@@ -167,8 +167,14 @@
   margin-bottom:100px;
 }
 /* RIGHT LEFT */
+.mgr_10{
+    margin-right:10px;
+}
 .mgr_20{
     margin-right:20px;
+}
+.mgl_10{
+    margin-left:10px;
 }
 .mgl_20{
     margin-left:20px;

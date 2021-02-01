@@ -1,24 +1,19 @@
 body{
   font-family: 'Roboto', sans-serif;
-  /* background-image: linear-gradient(
-      0deg,
-      rgba(209, 219, 220, 1) 0%,
-      rgba(219, 219, 211, 1) 100%
-    );
-  #009788
+  background-image: linear-gradient(to bottom, #009688 15vh,
+  #dddbd1 15vh, #d2dbdc 100%);
   height: 100vh;
-  width: 100%; */
 }
 
-.centro {
-  background-color: red;
-  height: 800px;
-}
 
 .left{
   width: 40%;
-  height: 800px;
-  background-color: lightgreen;
+}
+
+.top{
+  background-color: #eaeaea;
+  padding: 10px 10px;
+  border-right: 1px solid #e0e0e0;
 }
 
 img {
@@ -30,45 +25,104 @@ img {
 .ico li{
   list-style: none;
   display: inline;
+  color: #b1b1b1;
+  font-size: 25px;
+  padding-right: 15px;
 }
 
-.up {
-  background-color: lightgrey ;
-}
 
 .middle{
-  background-color: lightblue;
+  background-color: #8edafc;
   height: 70px;
+  padding: 10px 10px;
+}
+.middle img{
+  margin-right: 10px;
+}
+
+#attivo{
+  text-decoration: underline;
+  color: #5b829c;
 }
 
 .search{
   height: 50px;
-  background-color: lightgrey;
+  background-color: #fafafa;
+}
+
+.lente{
+  width: 100%;
+  height: 90%;
+  padding: 5px 5px;
+}
+
+.contorno i{
+  color: #b1b1b1;
+  margin-left: 20px;
+
+}
+
+.lente input{
+  height: 30px;
+  width: 350px;
+  outline: none;
+}
+
+.contorno{
+  background-color: white;
+  height: 30px;
+  width: 60px;
+  border: 1px solid #b1b1b1;
+}
+
+.contorno i{
+  padding: 5px 5px;
 }
 
 .utente li{
+  padding-top: 10px;
   list-style: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #fafafa;
 }
+
 .utenti img{
   vertical-align: top;
+  margin-bottom: 10px;
+  margin-left: 15px;
 }
 
 .right {
   width: 60%;
 }
 .chat{
-  /* background-image: url('../img/mine.jpg'); */
-  background-color: yellow;
-  height: 650px;
+  background-image: url('.../img/mine.jpg');
+  background-color: pink;
+  height: 600px;
 }
 
-.input li {
-  list-style: none;
-  display: inline;
 
+.input{
+  background-color: #f3eeea;
+  height: 70px;
+  padding: 5px 5px;
+  font-size: 30px;
+  color: #6b7376;
 }
 
 .input input{
-  width: 60%;
+  height: 55px;
+  width: 600px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border: 1px solid #cfcdce;
+  font-size: 15px;
+}
+
+.input i{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+input{
+  padding-left: 15px;
 }
