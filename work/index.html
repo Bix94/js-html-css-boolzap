@@ -23,7 +23,7 @@
   <div class="left column bgcw">
     <div class="row top spb aic">
       <div class="user">
-        <img src="img/bix.jpg" alt="">
+        <img src='img/bix.jpg' alt="user">
         <span>Bix</span>
       </div>
       <div class="">
@@ -53,11 +53,10 @@
     </div>
     <div class="utenti column bcw">
       <ul class="utente">
-        <li><img src="img/cri.jpg" alt="">Cri <span>16.32</span> </li>
-        <li><img src="img/dave.jpg" alt="">Dave <span>16.28</span> </li>
-        <li><img src="img/ema.jpg" alt="">Ema <span>16.04</span> </li>
-        <li><img src="img/yuri.jpg" alt="">Yuri <span>15.38</span> </li>
-        <li><img src="img/papaya.jpg" alt="">Papaya <span>15.03</span> </li>
+        <li v-for="contatto in contatti">
+            <img :src="contatto.avatar" alt="">
+            {{contatto.user}}
+        </li>
       </ul>
     </div>
   </div>
@@ -112,3 +111,9 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
+<!-- <li><img src="img/cri.jpg" alt="">Cri <span>16.32</span> </li>
+<li><img src="img/dave.jpg" alt="">Dave <span>16.28</span> </li>
+<li><img src="img/ema.jpg" alt="">Ema <span>16.04</span> </li>
+<li><img src="img/yuri.jpg" alt="">Yuri <span>15.38</span> </li>
+<li><img src="img/papaya.jpg" alt="">Papaya <span>15.03</span> </li> -->

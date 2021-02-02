@@ -1,30 +1,37 @@
 var app = new Vue({
     el: '#prova',
     data: {
-        contatto: [
+        contatti: [
             {
               user: 'Davide',
-              avatar:
+              avatar: 'img/dave.jpg',
+              visible: true
             },
             {
               user: 'Yuri',
-              avatar:
+              avatar: 'img/yuri.jpg',
+              visible: true
             },
             {
               user: 'Emanuele',
-              avatar:
+              avatar: 'img/ema.jpg',
+              visible: true
             },
             {
               user: 'Niccolo',
-              avatar:
+              avatar: 'img/papaya.jpg',
+              visible: true
             },
             {
               user: 'Cristiano',
-              avatar:
+              avatar: 'img/cri.jpg',
+              visible: true
             },
             {
               user: 'Giacomo',
-              avatar:
+              avatar: 'img/bix.jpg',
+              visible: true
             }
-        ],
+        ]
+  }  
 })
