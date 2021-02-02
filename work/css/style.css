@@ -83,6 +83,10 @@ input:focus{
   padding: 5px 5px;
 }
 
+.utente{
+  position: relative;
+}
+
 .utente li{
   padding-top: 10px;
   list-style: none;
@@ -151,4 +155,44 @@ input{
   font-size: 20px;
   padding: 15px;
   color: #8edafc;
+}
+
+.utente span{
+  position: absolute;
+  right: 3%;
+}
+
+.prova{
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: red; */
+}
+.box{
+  min-height: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 51%;
+}
+.white{
+  background-color: white;
+}
+.white > *{
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+.green{
+  float: right;
+  align-items: flex-end;
+  background-color: #d5f9ba;
+}
+.green > *{
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
