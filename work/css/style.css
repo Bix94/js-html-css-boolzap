@@ -169,28 +169,34 @@ input{
   /* background-color: red; */
 }
 .box{
+  position: relative;
   min-height: 30px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
-  width: 51%;
+  min-width: 40%;
+  max-width: 60%;
+  display: flex;
+  flex-direction: row;
+  word-break: break-word;
 }
-.white{
+.recived{
+  clear: both;
+  float: left;
   background-color: white;
 }
-.white > *{
+.recived > *{
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 10px;
 }
-.green{
+.sent{
   float: right;
-  align-items: flex-end;
+  clear: both;
   background-color: #d5f9ba;
+  justify-content: flex-end;
 }
-.green > *{
+.sent > *{
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
