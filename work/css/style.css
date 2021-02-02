@@ -188,17 +188,25 @@ input{
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-right: 10px;
+  padding-right: 40px;
 }
 .sent{
   float: right;
   clear: both;
   background-color: #d5f9ba;
-  justify-content: flex-end;
 }
 .sent > *{
-  padding-right: 15px;
+  padding-right: 45px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
+}
+
+.box span{
+  position: absolute;
+  bottom: 3px;
+  right: 10px;
+  font-size: 10px;
+  padding-right: 0px;
+  color: #919496;
 }
