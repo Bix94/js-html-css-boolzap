@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <!-- jsjquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         <img :src="'img/bix'+'.jpg'" alt="">
         <span> {{user.name}}</span>
       </div>
-      <div class="">
+      <div>
         <ul class="ico ">
           <li><i class="fas fa-circle-notch"></i></li>
           <li><i class="fas fa-comment-alt"></i></li>
@@ -52,11 +52,10 @@
       </div>
     </div>
     <div class="utenti column bcw">
-      <ul class="utente">
-        <li v-for="contatto in contatti">
+      <ul class="utente" @click="selectContact(index)">
+        <li v-for="contatto in contatti" >
             <img :src="contatto.avatar" alt="">
             {{contatto.name}}
-            <!-- <span>14.00</span> -->
         </li>
       </ul>
     </div>
@@ -64,9 +63,9 @@
   <div class="right">
     <div class="row top spb aic">
       <div class="utente row aic">
-        <img src="img/papaya.jpg" alt="">
+        <img :src="contatti[counter].avatar" alt="">
         <div class="column mgl_10">
-          <p>Michele</p>
+          <p>{{contatti[counter].name}}</p>
           <p class="tcg">Ultimo accesso oggi alle...</p>
         </div>
       </div>
@@ -80,16 +79,11 @@
     </div>
     <div class="chat">
       <div class="prova clearfix mgt_40">
-        <!-- contatto = segnaposto / contatti = nome array oggetti -->
-        <!-- .visible mi fa scendere in propietà contatti = arrivo a true/false -->
-        <div v-for="contatto in contatti" v-if="contatto.visible == true">
-        <!-- message = segnaposto / lavoro sul segnaposto contatto e .message mi fa scendere in propietà messages -->
-          <div v-for="message in contatto.messages" class="box" :class="message.status">
-            <!-- .text = scegli propietà dell'oggetto message -->
-            <p>{{message.text}}</p>
-            <span>{{message.date}}</span>
+          <div class="box" v-for="(contatto,index) in contatti[counter].messages"
+          :class="(contatto.status == 'sent')? 'sent' : 'received'">
+              <p>{{contatto.text}}</p>
+              <span>{{contatto.date}}</span>
           </div>
-        </div>
       </div>
     </div>
     <div class="input row aic">
@@ -110,3 +104,15 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
+
+<!-- contatto = segnaposto / contatti = nome array oggetti -->
+<!-- .visible mi fa scendere in propietà contatti = arrivo a true/false -->
+<!-- <div v-for="contatto in contatti" v-if="contatto.visible == true"> -->
+<!-- message = segnaposto / lavoro sul segnaposto contatto e .message mi fa scendere in propietà messages -->
+  <!-- <div v-for="message in contatto.messages" class="box" :class="message.status"> -->
+    <!-- .text = scegli propietà dell'oggetto message -->
+    <!-- <p>{{message.text}}</p>
+    <span>{{message.date}}</span>
+  </div>
+</div> -->

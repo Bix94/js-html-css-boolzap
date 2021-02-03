@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#prova',
     data: {
+      counter: 0,
       user: {
         name: 'Giacomo',
         avatar: 'bix'
@@ -108,7 +109,15 @@ var app = new Vue({
             }
         ]
   },
-  methods: {
+  created: {
 
-      }
+  },
+  methods: {
+    selectContact(index){
+      this.counter = indice;
+    },
+    // sendMessage(){
+    //
+    // }
+  },
 })
