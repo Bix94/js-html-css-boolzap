@@ -23,8 +23,8 @@
   <div class="left column bgcw">
     <div class="row top spb aic">
       <div class="user">
-        <img src='img/bix.jpg' alt="user">
-        <span>Bix</span>
+        <img :src="'img/bix'+'.jpg'" alt="">
+        <span> {{user.name}}</span>
       </div>
       <div class="">
         <ul class="ico ">
@@ -55,7 +55,7 @@
       <ul class="utente">
         <li v-for="contatto in contatti">
             <img :src="contatto.avatar" alt="">
-            {{contatto.user}}
+            {{contatto.name}}
             <!-- <span>14.00</span> -->
         </li>
       </ul>
@@ -80,21 +80,15 @@
     </div>
     <div class="chat">
       <div class="prova clearfix mgt_40">
-        <div class="box sent">
-          <p>PROVA PROVA PROVA PROVA PROVA</p>
-          <span>12.20</span>
-        </div>
-        <div class="box recived">
-          <p>italiaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitaliaitalisitalialitalsislitalia</p>
-          <span>13.00</span>
-        </div>
-        <div class="box recived">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <span>13.30</span>
-        </div>
-        <div class="box sent">
-          <p>-------+++++++++++------</p>
-          <span>13.35</span>
+        <!-- contatto = segnaposto / contatti = nome array oggetti -->
+        <!-- .visible mi fa scendere in propietà contatti = arrivo a true/false -->
+        <div v-for="contatto in contatti" v-if="contatto.visible == true">
+        <!-- message = segnaposto / lavoro sul segnaposto contatto e .message mi fa scendere in propietà messages -->
+          <div v-for="message in contatto.messages" class="box" :class="message.status">
+            <!-- .text = scegli propietà dell'oggetto message -->
+            <p>{{message.text}}</p>
+            <span>{{message.date}}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -116,9 +110,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-<!-- <li><img src="img/cri.jpg" alt="">Cri <span>16.32</span> </li>
-<li><img src="img/dave.jpg" alt="">Dave <span>16.28</span> </li>
-<li><img src="img/ema.jpg" alt="">Ema <span>16.04</span> </li>
-<li><img src="img/yuri.jpg" alt="">Yuri <span>15.38</span> </li>
-<li><img src="img/papaya.jpg" alt="">Papaya <span>15.03</span> </li> -->

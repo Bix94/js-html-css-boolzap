@@ -179,23 +179,24 @@ input{
   flex-direction: row;
   word-break: break-word;
 }
-.recived{
+.received{
   clear: both;
   float: left;
   background-color: white;
-}
-.recived > *{
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 40px;
 }
+
+.sent > *{
+  padding-right: 80px;
+}
+
 .sent{
   float: right;
   clear: both;
   background-color: #d5f9ba;
-}
-.sent > *{
   padding-right: 45px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -209,4 +210,5 @@ input{
   font-size: 10px;
   padding-right: 0px;
   color: #919496;
+
 }
