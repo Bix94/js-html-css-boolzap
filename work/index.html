@@ -52,8 +52,8 @@
       </div>
     </div>
     <div class="utenti column bcw">
-      <ul class="utente" @click="selectContact(index)">
-        <li v-for="contatto in contatti" >
+      <ul class="utente">
+        <li v-for="(contatto,index) in contatti" @click="selectContact(index)">
             <img :src="contatto.avatar" alt="">
             {{contatto.name}}
         </li>
