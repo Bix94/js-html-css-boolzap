@@ -1,9 +1,10 @@
+
 var app = new Vue({
     el: '#prova',
     data: {
+      show: "hide",
       counter: 0,
       newMessage: '',
-
       user: {
         name: 'Giacomo',
         avatar: 'bix'
@@ -124,8 +125,9 @@ var app = new Vue({
       // richiamo risposta
       setTimeout(this.responseAuto,2000);
     },
+    // elimino msg
     deleteMessage(index){
-      this.message.splice(index,1);
+      this.contatti[this.counter].messages.splice(index,1);
     },
     responseAuto(){
       // risposta auto
@@ -136,6 +138,10 @@ var app = new Vue({
       };
       // collego sempre counter + push
       this.contatti[this.counter].messages.push(risposta);
+    },
+    changeClass(){
+      this.show = "show";
     }
   },
+
 })

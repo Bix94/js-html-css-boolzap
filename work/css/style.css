@@ -6,7 +6,6 @@ body{
   display: flex;
 }
 
-
 .left{
   width: 40%;
 }
@@ -231,10 +230,6 @@ input{
   display: none;
 }
 
-.show{
-  display: block;
-}
-
 .menu li {
   list-style: none;
   padding-top: 10px;
@@ -251,4 +246,11 @@ input{
   width: 160px;
   right: 5px;
   top: 25px;
+}
+
+.show{
+  display: block;
+}
+.hide{
+  display: none;
 }
