@@ -2,6 +2,8 @@ var app = new Vue({
     el: '#prova',
     data: {
       counter: 0,
+      newMessage: '',
+      
       user: {
         name: 'Giacomo',
         avatar: 'bix'
@@ -109,15 +111,16 @@ var app = new Vue({
             }
         ]
   },
-  // created: {
-  //
-  // },
   methods: {
+    // collego contatore ad indice messaggi cosi vale per tutte propietà oggetto
     selectContact(index){
       this.counter = index;
     },
-    // sendMessage(){
-    //
-    // }
+    addMessage(){
+      // inizializzo messaggio a 0 + pusho in contatto + aggiungo classe sent
+      this.contatti[this.counter].messages.push({text:this.newMessage, status:"sent"});
+      // ripulisco casella input
+      this.newMessage = '';
+    }
   },
 })
