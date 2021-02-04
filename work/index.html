@@ -78,13 +78,13 @@
       </div>
     </div>
     <div class="chat">
-      <div class="prova clearfix mgt_40">
+      <div @click="changeClassReverse" class="prova clearfix mgt_40">
           <div class="box" v-for="(contatto,index) in contatti[counter].messages"
           :class="(contatto.status == 'sent')? 'sent' : 'received'">
               <p>{{contatto.text}}</p>
               <span>{{contatto.date}}</span>
                 <i class="fas fa-chevron-down" id="elimina" @click="changeClass"></i>
-                <ul class="menu" :class="show">
+                <ul class="menu" :class="show" :class="hide">
                   <!-- <li>Info messaggio</li> -->
                   <li>Rispondi</li>
                   <!-- <li>Inoltra messaggio</li> -->

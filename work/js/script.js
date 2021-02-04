@@ -3,6 +3,7 @@ var app = new Vue({
     el: '#prova',
     data: {
       show: "hide",
+      hide: "show",
       counter: 0,
       newMessage: '',
       user: {
@@ -139,9 +140,11 @@ var app = new Vue({
       // collego sempre counter + push
       this.contatti[this.counter].messages.push(risposta);
     },
-    changeClass(){
+    changeClass(index){
       this.show = "show";
+    },
+    changeClassReverse(index){    
+      this.hide = "hide";
     }
   },
-
 })
