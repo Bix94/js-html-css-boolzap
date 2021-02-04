@@ -212,3 +212,43 @@ input{
   padding-bottom: 5px;
   padding-left: 15px;
 }
+
+
+.box:hover #elimina{
+  display: block;
+}
+.box:hover span{
+  display: none;
+}
+
+#elimina{
+  position: absolute;
+  color: lightgrey;
+  height: 15px;
+  width: 15px;
+  top: 8px;
+  right: 7px;
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.menu li {
+  list-style: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background-color: grey;
+}
+.menu li:hover{
+  opacity: 0.8;
+}
+.menu{
+  display: none;
+  position: absolute;
+  width: 160px;
+  right: 5px;
+  top: 25px;
+}

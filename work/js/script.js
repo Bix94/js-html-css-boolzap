@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
       counter: 0,
       newMessage: '',
-      
+
       user: {
         name: 'Giacomo',
         avatar: 'bix'
@@ -121,6 +121,21 @@ var app = new Vue({
       this.contatti[this.counter].messages.push({text:this.newMessage, status:"sent"});
       // ripulisco casella input
       this.newMessage = '';
+      // richiamo risposta
+      setTimeout(this.responseAuto,2000);
+    },
+    deleteMessage(index){
+      this.message.splice(index,1);
+    },
+    responseAuto(){
+      // risposta auto
+      let risposta = {
+        date: '16:00',
+        text: 'ok',
+        status: 'received'
+      };
+      // collego sempre counter + push
+      this.contatti[this.counter].messages.push(risposta);
     }
   },
 })
