@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#prova',
     data: {
       show: "hide",
-      staScrivendo: true,
+      hide: "show",
       counter: 0,
       ricerca : '',
       newMessage: '',
@@ -111,7 +111,7 @@ var app = new Vue({
                 },
                 {
                   date: '15:50',
-                  text: 'Si, ma preferirei andare al cinema Si, ma preferirei andare al cinemaSi, ma preferirei andare al cinemaSi, ma preferirei andare al cinemaSi, ma preferirei andare al cinemaSi, ma preferirei andare al cinemaSi, ma preferirei andare al cinemaSi, ma preferirei andare al cinema',
+                  text: 'Si, ma preferirei andare al cinema',
                   status: 'received'
                 }
               ]
@@ -139,7 +139,7 @@ var app = new Vue({
     },
     responseAuto(){
       // risposta auto
-      let risposta = {
+      const risposta = {
         date: moment().locale('it').format('LT'),
         text: 'ok',
         status: 'received'
@@ -147,15 +147,14 @@ var app = new Vue({
       // collego sempre counter + push
       this.contatti[this.counter].messages.push(risposta);
     },
-    changeClass(){
-      this.show = 'show';
-    },
     chatFilter(){
+      // ciclo for each
       this.contatti.forEach(element => {
+        // se il nome include testo ricerca
         if(element.name.toLowerCase().includes(this.ricerca.toLowerCase())){
+          // rendo visibile
           element.visible = true;
-          console.log(element);
-          console.log(this.contatti);
+          // rendo invisibile
         } else element.visible = false;
       });
     }

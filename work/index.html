@@ -24,7 +24,7 @@
   <div id="prova" class="container centro mgt_20 row">
   <div class="left column bgcw">
     <!-- ========== -->
-    <!-- <div class="leftDue bgcw column">
+    <div :class="show" class="leftDue bgcw ">
       <div class="newChat column">
         <div class="pallini row">
           <div class="pallino bgcr">
@@ -54,17 +54,17 @@
         <li><img src="img/avatar_7.jpg" alt="">Pietro Bertolini</li>
         <li><img src="img/avatar_8.jpg" alt="">Alberto Rollero</li>
       </ul>
-    </div> -->
+    </div>
     <!-- =========== -->
-    <div class="row top spb aic">
+    <div  :class="hide" class="row top spb aic">
       <div class="user">
         <img :src="'img/bix'+'.jpg'" alt="">
         <span> {{user.name}}</span>
       </div>
       <div>
-        <ul class="ico ">
+        <ul class="ico">
           <li><i class="fas fa-circle-notch"></i></li>
-          <li><i class="fas fa-comment-alt"></i></li>
+          <li @click="changeClass"><i class="fas fa-comment-alt"></i></li>
           <li><i class="fas fa-ellipsis-v"></i></li>
         </ul>
       </div>
@@ -89,9 +89,13 @@
 <!-- +++ -->
     <div class="utenti column bcw">
       <ul class="utente">
-        <li v-for="(contatto,index) in contatti" @click="selectContact(index)" v-if="(contatto.visible)" >
+        <li class="row" v-for="(contatto,index) in contatti" @click="selectContact(index)" v-if="(contatto.visible)" >
             <img :src="contatto.avatar" alt="">
+            <div class="column">
             {{contatto.name}}
+              <p>{{contatto.messages[contatto.messages.length-1].text}}</p>
+              <span>{{contatto.messages[contatto.messages.length-1].date}}</span>
+            </div>
         </li>
       </ul>
     </div>
@@ -103,7 +107,6 @@
         <img :src="contatti[counter].avatar" alt="">
         <div class="column mgl_10">
           <p>{{contatti[counter].name}}</p>
-
           <div v-if="contatti[counter].scrittura" class="log">
             <p>Sta scrivendo...</p>
           </div>
@@ -124,8 +127,9 @@
           :class="(contatto.status == 'sent')? 'sent' : 'received'">
               <p>{{contatto.text}}</p>
               <span>{{contatto.date}}</span>
-                <i class="fas fa-chevron-down" id="elimina" @click="changeClass"></i>
-                <ul class="menu" :class="show">
+                <i class="fas fa-chevron-down" id="elimina"></i>
+                <!-- <i class="sent" class="fas fa-check" id="letto"></i> -->
+                <ul class="menu">
                   <li>Rispondi</li>
                   <li @click = "deleteMessage(contatto,index)">Elimina messaggio</li>
                 </ul>
@@ -134,7 +138,6 @@
     </div>
     <div class="input row aic">
       <i class="far fa-smile"></i>
-
       <input @keyup.enter="addMessage" v-model="newMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
       <i class="fas fa-microphone"></i>
     </div>
@@ -143,7 +146,7 @@
 
 </div>
 
-<!-- <span><i class="fas fa-check"></i></span> -->
+
 
 
 
