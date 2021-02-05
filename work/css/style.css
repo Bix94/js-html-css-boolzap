@@ -10,6 +10,83 @@ body{
   width: 40%;
 }
 
+.leftDue{
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.pallini{
+  height: 40px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.pallino{
+  height: 20px;
+  width: 20px;
+  border-radius: 999rem;
+  margin-right: 10px;
+}
+
+.newChat{
+  width: 100%;
+  background-color: #eaeaea;
+  padding-left: 30px;
+  padding-top: 20px;
+  color: #919496;
+}
+.newChat i{
+  padding-right: 30px;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.ricerca{
+  height: 60px;
+}
+.ricerca input{
+  width: 90%;
+  margin-left: 5%;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: 2px solid #eaeaea;
+}
+
+.rubrica{
+  overflow-y: scroll;
+}
+
+.rubrica li{
+  list-style: none;
+  border-top: 1px solid  #e0e0e0;
+  font-size: 20px;
+  padding-left: 20px;
+  padding: 15px 0;
+}
+
+.rubrica img{
+  padding-left: 10px;
+  margin-right: 15px;
+}
+
+.rubrica li:first-child , .rubrica li:last-child{
+  border-bottom: 1px solid  #e0e0e0;
+}
+
+.rubrica h5{
+  color: #009688 ;
+  padding: 20px 0;
+  padding-left: 40px;
+  font-size: 20px;
+}
+
+.rubrica li:hover{
+  background-color: #eaeaea;
+}
+
 .top{
   background-color: #eaeaea;
   padding: 10px 10px;
@@ -22,7 +99,6 @@ img {
   vertical-align: middle;
   margin-right: 5px;
 }
-
 .ico li{
   list-style: none;
   display: inline;
@@ -84,6 +160,11 @@ input:focus{
 
 .utente{
   position: relative;
+}
+
+.log p{
+  color: #b1b1b1;
+  font-size: 13px;
 }
 
 .utente li{
@@ -164,8 +245,7 @@ input{
 .prova{
   height: 100%;
   width: 80%;
-  margin: 0 auto;
-  /* background-color: red; */
+
 }
 
 .box{
@@ -230,6 +310,14 @@ input{
   display: none;
 }
 
+.menu{
+  display: none;
+  position: absolute;
+  width: 160px;
+  right: 5px;
+  top: 25px;
+  z-index: 2;
+}
 .menu li {
   list-style: none;
   padding-top: 10px;
@@ -239,13 +327,6 @@ input{
 }
 .menu li:hover{
   opacity: 0.8;
-}
-.menu{
-  display: none;
-  position: absolute;
-  width: 160px;
-  right: 5px;
-  top: 25px;
 }
 
 .show{

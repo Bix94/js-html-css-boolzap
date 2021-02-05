@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <!-- moment -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
   <!-- jsjquery -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- font -->
@@ -21,6 +23,39 @@
 
   <div id="prova" class="container centro mgt_20 row">
   <div class="left column bgcw">
+    <!-- ========== -->
+    <!-- <div class="leftDue bgcw column">
+      <div class="newChat column">
+        <div class="pallini row">
+          <div class="pallino bgcr">
+          </div>
+          <div class="pallino bgcy">
+          </div>
+          <div class="pallino bgcgr">
+          </div>
+        </div>
+        <div class="row nuova">
+          <i class="fas fa-chevron-left"></i>
+          <h2>Nuova Chat</h2>
+        </div>
+      </div>
+      <div class="ricerca row aic">
+        <input type="" placeholder="Cerca contatti">
+      </div>
+      <ul class="rubrica">
+        <li><img src="https://cdn1.iconfinder.com/data/icons/style-2-stock/807/Contacts-01.png" alt=""> Nuovo Gruppo</li>
+        <h5 class="up">Contattati di frequente</h5>
+        <li><img src="img/avatar_1.jpg" alt="">Andrea de Marchi</li>
+        <li><img src="img/avatar_2.jpg" alt="">Lorenzo Blondo</li>
+        <li><img src="img/avatar_3.jpg" alt="">Gabriele Ferraris</li>
+        <li><img src="img/avatar_4.jpg" alt="">Romulo Acosta</li>
+        <li><img src="img/avatar_5.jpg" alt="">Lorenzo Cemicetti</li>
+        <li><img src="img/avatar_6.jpg" alt="">Diana Biffi</li>
+        <li><img src="img/avatar_7.jpg" alt="">Pietro Bertolini</li>
+        <li><img src="img/avatar_8.jpg" alt="">Alberto Rollero</li>
+      </ul>
+    </div> -->
+    <!-- =========== -->
     <div class="row top spb aic">
       <div class="user">
         <img :src="'img/bix'+'.jpg'" alt="">
@@ -48,17 +83,19 @@
         <div class="contorno">
           <i class="fas fa-search"></i>
         </div>
-        <input type="" placeholder="Cerca o inizia una nuova chat">
+        <input v-model="ricerca" @keyup="chatFilter" type="" placeholder="Cerca o inizia una nuova chat">
       </div>
     </div>
+<!-- +++ -->
     <div class="utenti column bcw">
       <ul class="utente">
-        <li v-for="(contatto,index) in contatti" @click="selectContact(index)">
+        <li v-for="(contatto,index) in contatti" @click="selectContact(index)" v-if="(contatto.visible)" >
             <img :src="contatto.avatar" alt="">
             {{contatto.name}}
         </li>
       </ul>
     </div>
+<!-- ++++ -->
   </div>
   <div class="right">
     <div class="row top spb aic">
@@ -66,36 +103,38 @@
         <img :src="contatti[counter].avatar" alt="">
         <div class="column mgl_10">
           <p>{{contatti[counter].name}}</p>
-          <p class="tcg">Ultimo accesso oggi alle...</p>
+
+          <div v-if="contatti[counter].scrittura" class="log">
+            <p>Sta scrivendo...</p>
+          </div>
+          <div v-else class="log">
+            <p> Ultimo accesso oggi alle...</p>
+          </div>
         </div>
       </div>
-      <div class="">
         <ul class="ico">
           <li><i class="fas fa-search"></i></li>
           <li><i class="fas fa-paperclip"></i></li>
           <li><i class="fas fa-ellipsis-v"></i></li>
         </ul>
-      </div>
     </div>
-    <div class="chat">
-      <div @click="changeClassReverse" class="prova clearfix mgt_40">
+    <div class="chat" >
+      <div class="prova clearfix centro mgt_40">
           <div class="box" v-for="(contatto,index) in contatti[counter].messages"
           :class="(contatto.status == 'sent')? 'sent' : 'received'">
               <p>{{contatto.text}}</p>
               <span>{{contatto.date}}</span>
                 <i class="fas fa-chevron-down" id="elimina" @click="changeClass"></i>
-                <ul class="menu" :class="show" :class="hide">
-                  <!-- <li>Info messaggio</li> -->
+                <ul class="menu" :class="show">
                   <li>Rispondi</li>
-                  <!-- <li>Inoltra messaggio</li> -->
-                  <!-- <li>Messaggio importante</li> -->
-                  <li @click = "deleteMessage(index)">Elimina messaggio</li>
+                  <li @click = "deleteMessage(contatto,index)">Elimina messaggio</li>
                 </ul>
           </div>
       </div>
     </div>
     <div class="input row aic">
       <i class="far fa-smile"></i>
+
       <input @keyup.enter="addMessage" v-model="newMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
       <i class="fas fa-microphone"></i>
     </div>
@@ -104,11 +143,11 @@
 
 </div>
 
+<!-- <span><i class="fas fa-check"></i></span> -->
 
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

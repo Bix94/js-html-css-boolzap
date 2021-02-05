@@ -1,10 +1,10 @@
-
 var app = new Vue({
     el: '#prova',
     data: {
       show: "hide",
-      hide: "show",
+      staScrivendo: true,
       counter: 0,
+      ricerca : '',
       newMessage: '',
       user: {
         name: 'Giacomo',
@@ -14,7 +14,8 @@ var app = new Vue({
             {
               name: 'Davide',
               avatar: 'img/dave.jpg',
-              visible: true ,
+              scrittura: false,
+              visible: true,
               messages: [
                       {
                         date: '15:30',
@@ -36,7 +37,8 @@ var app = new Vue({
             {
               name: 'Yuri',
               avatar: 'img/yuri.jpg',
-              visible: false,
+              scrittura: false,
+              visible: true,
               messages: [
                       {
                         date: '16:30',
@@ -58,7 +60,8 @@ var app = new Vue({
             {
               name: 'Emanuele',
               avatar: 'img/ema.jpg',
-              visible: false,
+              scrittura: false,
+              visible: true,
               messages: [
                       {
                         date: '10:10',
@@ -80,7 +83,8 @@ var app = new Vue({
             {
               name: 'Niccolo',
               avatar: 'img/papaya.jpg',
-              visible: false,
+              scrittura: false,
+              visible: true,
               messages: [
                       {
                         date: '15:30',
@@ -97,7 +101,8 @@ var app = new Vue({
             {
               name: 'Cristiano',
               avatar: 'img/cri.jpg',
-              visible: false,
+              scrittura: false,
+              visible: true,
               messages: [
                 {
                   date: '15:30',
@@ -119,12 +124,14 @@ var app = new Vue({
       this.counter = index;
     },
     addMessage(){
-      // inizializzo messaggio a 0 + pusho in contatto + aggiungo classe sent
-      this.contatti[this.counter].messages.push({text:this.newMessage, status:"sent"});
-      // ripulisco casella input
-      this.newMessage = '';
-      // richiamo risposta
-      setTimeout(this.responseAuto,2000);
+      if (this.newMessage.length > 0){
+        // inizializzo messaggio a 0 + pusho in contatto + aggiungo classe sent
+        this.contatti[this.counter].messages.push({date: moment().locale('it').format('LT'),text:this.newMessage, status:"sent"});
+        // ripulisco casella input
+        this.newMessage = '';
+        // richiamo risposta
+        setTimeout(this.responseAuto,2000);
+      }
     },
     // elimino msg
     deleteMessage(index){
@@ -133,18 +140,24 @@ var app = new Vue({
     responseAuto(){
       // risposta auto
       let risposta = {
-        date: '16:00',
+        date: moment().locale('it').format('LT'),
         text: 'ok',
         status: 'received'
       };
       // collego sempre counter + push
       this.contatti[this.counter].messages.push(risposta);
     },
-    changeClass(index){
-      this.show = "show";
+    changeClass(){
+      this.show = 'show';
     },
-    changeClassReverse(index){    
-      this.hide = "hide";
+    chatFilter(){
+      this.contatti.forEach(element => {
+        if(element.name.toLowerCase().includes(this.ricerca.toLowerCase())){
+          element.visible = true;
+          console.log(element);
+          console.log(this.contatti);
+        } else element.visible = false;
+      });
     }
   },
 })

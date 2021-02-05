@@ -23,6 +23,15 @@
 .bgcbk {
   background-color: black;
 }
+.bgcr{
+  background-color: rgb(255, 0, 0);
+}
+.bgcy{
+  background-color: rgb(255, 252, 0);
+}
+.bgcgr{
+  background-color: rgb(36, 255, 0);
+}
 /* WARNING VARI */
 .tac{
   text-align: center;
