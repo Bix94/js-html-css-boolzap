@@ -127,7 +127,7 @@
           <li><i class="fas fa-ellipsis-v"></i></li>
         </ul>
     </div>
-    <div class="chat" >
+    <div class="chat pdt_30">
       <div class="prova clearfix centro mgt_40">
         <!-- ciclo messaggi contatto in contatti tramite il contatore -->
           <div class="box" v-for="(contatto,index) in contatti[counter].messages"
@@ -138,6 +138,7 @@
               <span>{{contatto.date}}</span>
               <!-- collego funzione + entro in messaggi + lavoro su index -->
                 <i class="fas fa-chevron-down" id="elimina" @click="changeClass(contatti[counter].messages, index)"></i>
+                <!-- <i id="letto" class="fas fa-check" v-if="(contatto.status == 'sent')?"></i> -->
                 <!-- visibile if visual == true -->
                 <ul class="menu" v-if="contatti[counter].messages[index].visual">
                   <li>Rispondi</li>

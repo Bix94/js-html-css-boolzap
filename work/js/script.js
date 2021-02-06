@@ -138,7 +138,7 @@ var app = new Vue({
     addMessage(){
       if (this.newMessage.length > 0){
         // inizializzo messaggio a 0 + pusho in contatto + aggiungo classe sent
-        this.contatti[this.counter].messages.push({date: moment().locale('it').format('LT'),text:this.newMessage, status:"sent"});
+        this.contatti[this.counter].messages.push({date: moment().locale('it').format('LT'),text:this.newMessage, status:"sent", visual:false});
         // ripulisco casella input
         this.newMessage = '';
         // richiamo risposta
@@ -154,7 +154,8 @@ var app = new Vue({
       const risposta = {
         date: moment().locale('it').format('LT'),
         text: 'ok',
-        status: 'received'
+        status: 'received',
+        visual:false
       };
       // collego sempre counter + push
       this.contatti[this.counter].messages.push(risposta);

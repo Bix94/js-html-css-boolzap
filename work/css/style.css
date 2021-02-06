@@ -204,9 +204,10 @@ input:focus{
 
 .chat{
   background-image: url('../img/mine.jpg');
-  background-color: pink;
   height: calc(100% - 140px);
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .input{
@@ -320,16 +321,17 @@ input{
   top: 8px;
   right: 7px;
   display: none;
+  margin-bottom: 20px;
 }
 
-/* #letto{
+#letto{
   color: #8edafc;
   position: absolute;
   height: 15px;
   width: 15px;
   top: 10px;
   right: 38px;
-} */
+}
 
 .menu{
   position: absolute;
