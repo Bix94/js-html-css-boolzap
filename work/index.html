@@ -24,7 +24,7 @@
   <div id="prova" class="container centro mgt_20 row">
   <div class="left column bgcw">
     <!-- ========== -->
-    <div :class="show" class="leftDue bgcw ">
+    <!-- <div :class="show" class="leftDue bgcw ">
       <div class="newChat column">
         <div class="pallini row">
           <div class="pallino bgcr">
@@ -54,9 +54,9 @@
         <li><img src="img/avatar_7.jpg" alt="">Pietro Bertolini</li>
         <li><img src="img/avatar_8.jpg" alt="">Alberto Rollero</li>
       </ul>
-    </div>
+    </div> -->
     <!-- =========== -->
-    <div  :class="hide" class="row top spb aic">
+    <div class="row top spb aic">
       <div class="user">
         <img :src="'img/bix'+'.jpg'" alt="">
         <span> {{user.name}}</span>
@@ -64,7 +64,7 @@
       <div>
         <ul class="ico">
           <li><i class="fas fa-circle-notch"></i></li>
-          <li @click="changeClass"><i class="fas fa-comment-alt"></i></li>
+          <li><i class="fas fa-comment-alt"></i></li>
           <li><i class="fas fa-ellipsis-v"></i></li>
         </ul>
       </div>
@@ -83,15 +83,20 @@
         <div class="contorno">
           <i class="fas fa-search"></i>
         </div>
+        <!-- lego al keyup la funzione -->
+        <!-- all input il contatto da filtrare -->
         <input v-model="ricerca" @keyup="chatFilter" type="" placeholder="Cerca o inizia una nuova chat">
       </div>
     </div>
 <!-- +++ -->
     <div class="utenti column bcw">
       <ul class="utente">
+        <!-- ciclo contatti -->
+        <!-- tramite il click rendo contatto visibile == true -->
         <li class="row" v-for="(contatto,index) in contatti" @click="selectContact(index)" v-if="(contatto.visible)" >
             <img :src="contatto.avatar" alt="">
             <div class="column">
+              <!-- stampo  -->
             {{contatto.name}}
               <p>{{contatto.messages[contatto.messages.length-1].text}}</p>
               <span>{{contatto.messages[contatto.messages.length-1].date}}</span>
@@ -104,6 +109,7 @@
   <div class="right">
     <div class="row top spb aic">
       <div class="utente row aic">
+        <!-- collego img al counter -->
         <img :src="contatti[counter].avatar" alt="">
         <div class="column mgl_10">
           <p>{{contatti[counter].name}}</p>
@@ -123,21 +129,28 @@
     </div>
     <div class="chat" >
       <div class="prova clearfix centro mgt_40">
+        <!-- ciclo messaggi contatto in contatti tramite il contatore -->
           <div class="box" v-for="(contatto,index) in contatti[counter].messages"
           :class="(contatto.status == 'sent')? 'sent' : 'received'">
+          <!-- attribuisco classe css a seconda se e sent o recived -->
               <p>{{contatto.text}}</p>
+              <!-- STAMPA TESTO E DATA -->
               <span>{{contatto.date}}</span>
-                <i class="fas fa-chevron-down" id="elimina"></i>
-                <!-- <i class="sent" class="fas fa-check" id="letto"></i> -->
-                <ul class="menu">
+              <!-- collego funzione + entro in messaggi + lavoro su index -->
+                <i class="fas fa-chevron-down" id="elimina" @click="changeClass(contatti[counter].messages, index)"></i>
+                <!-- visibile if visual == true -->
+                <ul class="menu" v-if="contatti[counter].messages[index].visual">
                   <li>Rispondi</li>
-                  <li @click = "deleteMessage(contatto,index)">Elimina messaggio</li>
+                  <!-- on click cancello (index) -->
+                  <li @click = "deleteMessage(index)">Elimina messaggio</li>
                 </ul>
           </div>
       </div>
     </div>
     <div class="input row aic">
       <i class="far fa-smile"></i>
+      <!-- lego al keyup la funzione -->
+      <!-- all input il messaggio vuoto da riempire -->
       <input @keyup.enter="addMessage" v-model="newMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
       <i class="fas fa-microphone"></i>
     </div>

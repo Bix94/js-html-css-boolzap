@@ -1,8 +1,7 @@
 var app = new Vue({
     el: '#prova',
     data: {
-      show: "hide",
-      hide: "show",
+      visual : false,
       counter: 0,
       ricerca : '',
       newMessage: '',
@@ -20,16 +19,19 @@ var app = new Vue({
                       {
                         date: '15:30',
                         text: 'Hai portato a spasso il cane?',
+                        visual : false,
                         status: 'sent'
                       },
                       {
                         date: '15:50',
                         text: 'Ricordati di dargli da mangiare',
+                        visual : false,
                         status: 'sent'
                       },
                       {
                         date: '16:15',
                         text: 'Tutto fatto!',
+                        visual : false,
                         status: 'received'
                       }
                     ],
@@ -41,16 +43,19 @@ var app = new Vue({
               visible: true,
               messages: [
                       {
+                        visual : false,
                         date: '16:30',
                         text: 'Ciao come stai?',
                         status: 'sent'
                       },
                       {
+                        visual : false,
                         date: '16:30',
                         text: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                       },
                       {
+                        visual : false,
                         date: '16:35',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
@@ -64,16 +69,19 @@ var app = new Vue({
               visible: true,
               messages: [
                       {
+                        visual : false,
                         date: '10:10',
                         text: 'La Marianna va in campagna',
                         status: 'received'
                       },
                       {
+                        visual : false,
                         date: '10:20',
                         text: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                         },
                         {
+                        visual : false,
                         date: '16:15',
                         text: 'Ah scusa!',
                         status: 'received'
@@ -87,11 +95,13 @@ var app = new Vue({
               visible: true,
               messages: [
                       {
+                        visual : false,
                         date: '15:30',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                       },
                       {
+                        visual : false,
                         date: '15:50',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
@@ -105,11 +115,13 @@ var app = new Vue({
               visible: true,
               messages: [
                 {
+                  visual : false,
                   date: '15:30',
                   text: 'Lo sai che ha aperto una nuova pizzeria?',
                   status: 'sent'
                 },
                 {
+                  visual : false,
                   date: '15:50',
                   text: 'Si, ma preferirei andare al cinema',
                   status: 'received'
@@ -157,6 +169,18 @@ var app = new Vue({
           // rendo invisibile
         } else element.visible = false;
       });
+    },
+    // lavoro su element e index
+    changeClass(element,index){
+      console.log(element[index].visual);
+      // rendo visibilie (index)
+      if (element[index].visual == false) {
+                element[index].visual = true;
+            }
+            // rendo invisibile (index)
+            else {
+                element[index].visual = false;
+            }
     }
   },
 })

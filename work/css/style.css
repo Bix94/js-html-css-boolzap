@@ -332,7 +332,6 @@ input{
 } */
 
 .menu{
-  display: none;
   position: absolute;
   width: 160px;
   right: 5px;
@@ -348,11 +347,4 @@ input{
 }
 .menu li:hover{
   opacity: 0.8;
-}
-
-.show{
-  display: block;
-}
-.hide{
-  display: none;
 }
