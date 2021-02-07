@@ -6,15 +6,18 @@ body{
   display: flex;
 }
 
+.right{
+  height: calc(100vh - 22px);
+}
+
 .left{
   width: 40%;
+  /* height: 101%; */
 }
 
 .leftDue{
-  display: none;
-  width: 100%;
-  height: 99%;
-  z-index: 2;
+  width: 460px;
+  height: calc(100vh - 22px);
 }
 
 .pallini{
@@ -56,7 +59,8 @@ body{
 }
 
 .rubrica{
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 79%;
 }
 
 .rubrica li{
@@ -162,11 +166,6 @@ input:focus{
   position: relative;
 }
 
-.log p{
-  color: #b1b1b1;
-  font-size: 13px;
-}
-
 .utente li{
   padding-top: 10px;
   list-style: none;
@@ -178,9 +177,8 @@ input:focus{
 }
 
 .utente p{
-  padding-top: 10px;
-  font-size: 13px;
-  color: #6b7376;
+  font-size: 17px;
+  padding-bottom: 6px;
 }
 
 .utente span{
@@ -189,10 +187,16 @@ input:focus{
   font-size: 13px;
 }
 
+.log p{
+  color: #b1b1b1;
+  font-size: 12px;
+}
+
+
 /* WARNING AGGIUNGERE CONTATTI PER RENDERLO VISIBILE */
 .utenti{
  overflow-y: scroll;
- height: calc(100% - 200px);
+ height: calc(100% - 189px);
 }
 
 .utenti img{
@@ -200,6 +204,12 @@ input:focus{
   margin-bottom: 10px;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.singolo p{
+  font-size: 13px;
+  color:  #6b7376;
+  padding-top: 9px;
 }
 
 .chat{
@@ -255,11 +265,6 @@ input{
   right: 3%;
 }
 
-.prova{
-  height: 100%;
-  width: 80%;
-
-}
 
 .box{
   position: relative;
@@ -349,4 +354,9 @@ input{
 }
 .menu li:hover{
   opacity: 0.8;
+}
+
+.prova{
+  height: 100%;
+  width: 80%;
 }

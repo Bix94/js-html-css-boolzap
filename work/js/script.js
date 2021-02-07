@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#prova',
     data: {
+      ema: false,
       visual : false,
       counter: 0,
       ricerca : '',
@@ -128,6 +129,49 @@ var app = new Vue({
                 }
               ]
             }
+        ],
+        rubrica:
+        [
+          {
+            visible: true,
+            name: 'Andrea De Marchi',
+            avatar: 'img/avatar_1.jpg',
+          },
+          {
+            visible: true,
+            name: 'Lorenzo Blondo',
+            avatar: 'img/avatar_2.jpg',
+          },
+          {
+            visible: true,
+            name: 'Gabriele Ferraris',
+            avatar: 'img/avatar_3.jpg',
+          },
+          {
+            visible: true,
+            name: 'Romulo Acosto',
+            avatar: 'img/avatar_4.jpg',
+          },
+          {
+            visible: true,
+            name: 'Lorenzo Cemicetti',
+            avatar: 'img/avatar_5.jpg',
+          },
+          {
+            visible: true,
+            name: 'Diana Biffi',
+            avatar: 'img/avatar_6.jpg',
+          },
+          {
+            visible: true,
+            name: 'Pietro Bertolini',
+            avatar: 'img/avatar_7.jpg',
+          },
+          {
+            visible: true,
+            name: 'Alberto Rollero',
+            avatar: 'img/avatar_8.jpg',
+          },
         ]
   },
   methods: {
@@ -170,7 +214,19 @@ var app = new Vue({
           // rendo invisibile
         } else element.visible = false;
       });
-    },
+    }
+    // DOMANDA DA CHIEDERE (Unire funzioni per poi passare solo i segnaposto)
+    // chatFilterDue(){
+    //   // ciclo for each
+    //   this.rubrica.forEach(element => {
+    //   // se il nome include testo ricerca
+    //     if(element.name.toLowerCase().includes(this.ricerca.toLowerCase())){
+    //       // rendo visibile
+    //       element.visible = true;
+    //       // rendo invisibile
+    //     } else element.visible = false;
+    //   });
+    // },
     // lavoro su element e index
     changeClass(element,index){
       console.log(element[index].visual);
@@ -182,6 +238,13 @@ var app = new Vue({
             else {
                 element[index].visual = false;
             }
+    },
+    mostra(){
+      // <3
+      this.ema = true;
+    },
+    nascondi(){
+      this.ema = false;
     }
   },
 })
