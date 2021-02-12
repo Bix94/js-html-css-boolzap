@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="ricerca row aic">
-        <input type="text" v-model="ricerca" placeholder="Cerca contatti" >
+        <input type="text" v-model="ricerca" @keyup="chatFilter" placeholder="Cerca contatti" >
       </div>
       <ul class="rubrica">
         <li><img src="https://cdn1.iconfinder.com/data/icons/style-2-stock/807/Contacts-01.png" alt=""> Nuovo Gruppo</li>

@@ -214,7 +214,7 @@ var app = new Vue({
           // rendo invisibile
         } else element.visible = false;
       });
-    }
+    },
     // DOMANDA DA CHIEDERE (Unire funzioni per poi passare solo i segnaposto)
     // chatFilterDue(){
     //   // ciclo for each
