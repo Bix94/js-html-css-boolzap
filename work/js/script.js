@@ -240,7 +240,6 @@ var app = new Vue({
             }
     },
     mostra(){
-      // <3
       this.ema = true;
     },
     nascondi(){
